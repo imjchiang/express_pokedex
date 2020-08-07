@@ -1,27 +1,35 @@
 'use strict';
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('pokemons', {
-      id: {
+module.exports = 
+{
+  up: async (queryInterface, Sequelize) => 
+  {
+    await queryInterface.createTable('pokemons', 
+    {
+      id: 
+      {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      name: 
+      {
         type: Sequelize.STRING
       },
-      createdAt: {
+      createdAt: 
+      {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updatedAt: 
+      {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface, Sequelize) => 
+  {
     await queryInterface.dropTable('pokemons');
   }
 };
