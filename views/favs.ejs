@@ -1,13 +1,14 @@
 <div class="container">
     <h1 class="text-center">Your Favorite Pokemon</h1>
   
-    <% pokemon.forEach(function(poke) { %>
-        <div class="well">
-          <h2><%= poke.name[0].toUpperCase() + poke.name.substr(1, poke.name.length); %></h2>
-          <form method="GET" action="/pokemon/<%= poke.name.toLowerCase() %>">
-            <button class="btn btn-primary" type="submit">Details</button>
-          </form>
-        </div>
+    <% pokemon.forEach(function(poke) 
+    { %>
+      <div class="well">
+        <h2><%= poke.name[0].toUpperCase() + poke.name.substr(1, poke.name.length); %></h2>
+        <form method="GET" action="/pokemon/<%= poke.name.toLowerCase() %>">
+          <button class="btn btn-primary" type="submit">Stats</button>
+        </form>
+      </div>
     <% }); %>
   </div>
   
