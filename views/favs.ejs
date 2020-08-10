@@ -7,11 +7,6 @@
     <% pokemon.forEach(function(poke) { %>
         <div>
             <h2><%= poke.name %></h2>
-            <img src="<%= pokemon.sprites.front_default %>">
-            <% let pokeTypes = poke.types %> 
-            <h4>Type: <% pokeTypes.forEach(type => { %>
-                <%= type.name %>
-            <% }); %></h4>
         </div>
     <% }); %>
   </div>

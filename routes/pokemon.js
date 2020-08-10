@@ -1,42 +1,39 @@
-var express = require('express');
-var router = express.Router();
-var db = require("../models");
+const express = require("express");
+const router = express.Router();
+let db = require("../models");
 
 // GET /pokemon - return a page with favorited Pokemon
-router.get('/', function(req, res) 
+router.get("/", async function(req, res)
 {
-  db.pokemon.findAll().then(function(poke) 
+  try
   {
-    console.log('Found: ', poke.name);
-  });
-  // TODO: Get all records from the DB and render to view
-  res.render("favs", {pokemon: db.pokemon.findAll()});
+    let pokes = await db.pokemon.findAll(); 
+    res.render("favs", {pokemon: pokes});
+  } 
+  catch (err)
+  {
+    res.send(err, "Error");
+  }
 });
 
-// POST /pokemon - receive the name of a pokemon and add it to the database
-router.post('/', function(req, res) 
+router.post("/", async function(req, res)
 {
-  // Make sure to require your models in the files where they will be used.
-  // db.pokemon.create(
-  //   {
-  //     name: req.params.name
-  //   })
-  //   .then(function(poke) 
-  //   {
-  //     console.log('Created: ', poke.name)
-  //   });
-
-  // TODO: Get form data and add a new record to DB
-  db.pokemon.findOrCreate(
+  try 
+  {
+    await db.pokemon.findOrCreate(
     {
-      where:
+      where: 
       {
         name: req.body.name
       }
-    }
-  );
-  res.redirect("/pokemon");
-  //res.send(req.body);
+    });
+    res.redirect("/pokemon");
+
+  }
+  catch (err)
+  {
+    console.log("Error", error);
+  }
 });
 
 module.exports = router;

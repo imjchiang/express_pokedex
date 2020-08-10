@@ -1,0 +1,5 @@
+<img src="<%= pokemon.sprites.front_default %>">
+<% let pokeTypes = poke.types %> 
+<h4>Type: <% pokeTypes.forEach(type => { %>
+    <%= type.name %>
+<% }); %></h4>
