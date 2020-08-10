@@ -2,3 +2,25 @@ body
 {
     background-color: teal;
 }
+
+h1
+{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+h4
+{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+img
+{
+    width: 10%;
+    margin-right: 45%;
+    margin-left: 45%;
+}
