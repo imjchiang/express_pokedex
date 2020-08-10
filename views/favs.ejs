@@ -5,7 +5,7 @@
     </p>
   
     <% pokemon.forEach(function(poke) { %>
-        <div>
+        <div class="well">
           <h2><%= poke.name %></h2>
           <form method="GET" action="/pokemon/<%= poke.name.toLowerCase() %>">
             <button class="btn btn-primary" type="submit">Details</button>

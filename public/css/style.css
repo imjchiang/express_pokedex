@@ -24,3 +24,9 @@ img
     margin-right: 45%;
     margin-left: 45%;
 }
+
+#favorites
+{
+    display: flex;
+    justify-content: center;
+}
