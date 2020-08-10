@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center">Your Favorite Pokemon</h1>
+    <p class="text-center">
+      <a href="/pokemon">Favorites</a>
+    </p>
+  
+    <% pokemon.forEach(function(poke) { %>
+        <div>
+            <h2><%= poke.name %></h2>
+            <img src="<%= pokemon.sprites.front_default %>">
+            <% let pokeTypes = poke.types %> 
+            <h4>Type: <% pokeTypes.forEach(type => { %>
+                <%= type.name %>
+            <% }); %></h4>
+        </div>
+    <% }); %>
+  </div>
+  

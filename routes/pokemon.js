@@ -34,7 +34,7 @@ router.post('/', function(req, res)
         name: req.body.name
       }
     }
-  )
+  );
   res.redirect("/pokemon");
   //res.send(req.body);
 });
